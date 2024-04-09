@@ -94,5 +94,3 @@ btn1.pack()
 
 
 root.mainloop()
-
-авпвапвапвапва
