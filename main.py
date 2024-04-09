@@ -33,7 +33,7 @@ Timmi = chel()
 
 Mary = chel() # объект класса
 
-#def
+
 
 def explor():
     i = random.randint(1,10)
