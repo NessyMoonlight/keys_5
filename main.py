@@ -6,40 +6,43 @@ import ru_local as ru
 
 
 class chel():
-    def __init__(self, idpers):
-        self.idpers = idpers
+    def __init__(self, name):
+        self.name = name
         self.inventory = 0
         self.thrust = 4
         self.hunger = 4
         self.hp = 3
         self.max_hp = 3
+    def __del__(self):
+        print(f"{self.name} Умер")
+
 
 
 class room():
-    def __init__(self):
-        self.water = 0
-        self.food = 0
-        self.knife = 0
-        self.medkit = 0
-        self.cat = 0
-        self.map = 1
-        self.axe = 0
-        self.soap = 0
-        self.dihlofos = 0
-        self.lock = 0
-        self.ammo = 0
-        self.radio = 0
-        self.rifel = 0
+    def __init__(self,water,food,knife,medkit,cat,map,axe,soap,dihlofos,lock,ammo,radio,rifel):
+        self.water = water
+        self.food = food
+        self.knife = knife
+        self.medkit = medkit
+        self.cat = cat
+        self.map = map
+        self.axe = axe
+        self.soap = soap
+        self.dihlofos = dihlofos
+        self.lock = lock
+        self.ammo = ammo
+        self.radio = radio
+        self.rifel = rifel
 
-Ted = chel(1)
+Ted = chel("Ted")
 
-Dolores = chel(2)
+Dolores = chel("Dolores")
 
-Timmi = chel(3)
+Timmi = chel("Timmi")
 
-Mary = chel(4)
-
-Room = room()
+Mary = chel("Mary")
+print(nach.Rooom.food)
+Room = room(nach.Rooom.water,nach.Rooom.food,nach.Rooom.knife,nach.Rooom.medkit,nach.Rooom.cat,nach.Rooom.map,nach.Rooom.axe,nach.Rooom.soap,nach.Rooom.dihlofos,nach.Rooom.lock,nach.Rooom.ammo,nach.Rooom.radio,nach.Rooom.rifle)
 
 
 def exploror():
@@ -80,15 +83,19 @@ def day_start():
     if Ted:
         Ted.hunger -= 1
         Ted.thrust -=1
+        print(f"Здоровье Теда{Ted.hp}\nЖажда Теда{Ted.thrust}\nГолод Теда{Ted.hunger}\n ================\n")
     if Dolores:
         Dolores.hunger -=1
         Dolores.thrust -=1
+        print(f"Здоровье Долорес{Dolores.hp}\nЖажда Долорес{Dolores.thrust}\nГолод Долорес{Dolores.hunger}\n ================\n")
     if Timmi:
         Timmi.hunger -=1
         Timmi.thrust -=1
+        print(f"Здоровье Тимми{Timmi.hp}\nЖажда Тимми{Timmi.thrust}\nГолод Тимми{Timmi.hunger}\n ================\n")
     if Mary:
         Mary.hunger -=1
         Mary.thrust -=1
+        print(f"Здоровье Мэри{Mary.hp}\nЖажда Мэри{Mary.thrust}\nГолод Мэри{Mary.hunger}\n ================\n")
 
     def feed_ted():
         if Room.food>0:
@@ -176,19 +183,5 @@ def day_start():
 
     root.mainloop()
 
-def day1():
-    print("Текст день 1")
-    if Ted.hunger == 0 or Ted.thrust == 0 or Ted.hp == 0:
-        Ted.__del__()
-        print("Tед мертв")
-    if Dolores.hunger == 0 or Dolores.thrust == 0 or Dolores.hp == 0:
-        Dolores.__del__()
-        print("Доллорес мертва")
-    if Timmi.hunger == 0 or Timmi.thrust == 0 or Timmi.hp == 0:
-        Timmi.__del__()
-        print("Тимми мерт")
-    if Mary.hunger == 0 or Mary.thrust == 0 or Mary.hp == 0:
-        Mary.__del__()
-        print("Мари мертва") 
-    day_start()   
+
 

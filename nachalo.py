@@ -16,9 +16,11 @@ class room():
         self.book = 0
         self.rifle = 0
         self.lantern = 0
+        self.ammo = 2
+        self.radio = 1
 
 
-Room = room()
+Rooom = room()
 
 p_1 = input(ru.BEGINNING)
 p_2 = input(ru.BEGINNING)
@@ -26,63 +28,84 @@ p_3 = input(ru.BEGINNING)
 p_4 = input(ru.BEGINNING)
 ps = [p_1, p_2, p_3, p_4]
 i = random.choice(ps)
+food = 0
+water = 0
+medkit = 0
 
-print(text1) # из констант
-
-def kitchen():
-    answer = [int(input(i, ru.KITCHEN))]
-    ps.remove(i)
-    if '4' in answer:
-        Room.food += 1
-    elif '5' in answer:
-        Room.water += 1
-    elif '8' in answer:
-        Room.water += 1
-    elif '9' in answer:
-        Room.medkit += 1
-    elif '1' in answer:
-        Room.knife += 1
+print("qsd") # из констант
 
 
-def liv_r():
-    answer = [int(input(i, ru.LIV_R))]
-    ps.remove(i)
-    if '1' in answer:
-        Room.lock += 1
-    elif '4' in answer:
-        Room.book += 1
-    elif '5' in answer:
-        Room.food += 1
-    elif '6' in answer:
-        Room.axe += 1
-    elif '7' in answer:
-        Room.rifle += 1
+answer = [input(f"{i} {ru.KITCHEN}")]
+ps.remove(i)
+if '4' in answer:
+    Rooom.food += 2
+    food +=1
+elif '5' in answer:
+    Rooom.water += 2
+    water +=1
+elif '8' in answer:
+    Rooom.water += 2
+    water +=1
+elif '9' in answer:
+    Rooom.medkit += 1
+    medkit +=1
+elif '1' in answer:
+    Rooom.knife += 1
+i = random.choice(ps)
+
+answer = [input(f"{i} {ru.KITCHEN}")]
+ps.remove(i)
+if '1' in answer:
+    Rooom.lock += 1
+elif '4' in answer:
+    Rooom.book += 1
+elif '5' in answer:
+    Rooom.food += 2
+    food +=1
+elif '6' in answer:
+    Rooom.axe += 1
+elif '7' in answer:
+    Rooom.rifle += 1
+
+i = random.choice(ps)
 
 
-def bath():
-    answer = [int(input(i, ru.BATH))]
-    ps.remove(i)
-    if '1' in answer:
-        Room.medkit += 1
-    elif '2' in answer:
-        Room.soap += 1
-    elif '4' in answer:
-        Room.water += 1
-    elif '5' in answer:
-        Room.dihlofos += 1
-    elif '6' in answer:
-        Room.water += 1
+answer = [input(f"{i} {ru.KITCHEN}")]
+ps.remove(i)
+if '1' in answer:
+    Rooom.medkit += 1
+    medkit +=1
+elif '2' in answer:
+    Rooom.soap += 1
+elif '4' in answer:
+    Rooom.water += 2
+    water +=1
+elif '5' in answer:
+    Rooom.dihlofos += 1
+elif '6' in answer:
+    Rooom.water += 2
+    water +=1
+
+i = random.choice(ps)
 
 
-def child():
-    answer = [int(input(i, ru.CHILD))]
-    ps.remove(i)
-    if '1' in answer:
-        Room.lantern += 1
-    elif '2' in answer:
-        Room.food += 1
-    elif '8' in answer:
-        Room.book += 1
-    elif '9' in answer:
-        Room.water += 1
+answer = [input(f"{i} {ru.KITCHEN}")]
+ps.remove(i)
+if '1' in answer:
+    Rooom.lantern += 1
+elif '2' in answer:
+    Rooom.food += 2
+    food +=1
+elif '8' in answer:
+    Rooom.book += 1
+elif '9' in answer:
+    Rooom.water += 2
+    water +=1
+      
 
+if water == 0:
+    Rooom.water += 8
+if food == 0:
+    Rooom.food +=8
+if medkit== 0:
+    Rooom.medkit +=1
