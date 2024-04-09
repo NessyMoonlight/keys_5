@@ -88,7 +88,6 @@ elif '6' in answer:
 
 i = random.choice(ps)
 
-
 answer = [input(f"{i} {ru.KITCHEN}")]
 ps.remove(i)
 if '1' in answer:
