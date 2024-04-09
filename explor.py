@@ -1,11 +1,12 @@
 import main as main
 from tkinter import *
 from tkinter import messagebox
+import ru_local as ru
 
 def event1():
-    print("Условия")
-    print("Выбор 1")
-    print("Выбор 2")
+    print(ru.EVENT_1)
+    print(ru.EVENT_1_1)
+    print(ru.EVENT_1_2)
     root = Tk()
     root.title("Событие")
     root.geometry("100x100")
