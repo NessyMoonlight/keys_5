@@ -21,17 +21,10 @@ class room():
         self.medkit = 0
         self.cat = 0
         self.map = 1
+        self.axe = 0
+
 
 Room = room()
-
-Ted = chel()
-
-Dolores = chel() # объект класса
-
-Timmi = chel()
-
-Mary = chel() # объект класса
-
 
 
 def explor():
@@ -63,8 +56,37 @@ def explor_result(food,water,medkit,cat):
     Room.medkit += medkit
     Room.cat += cat
 
+def event1():
+    root = Tk()
+    root.title("Событие")
+    root.geometry("600x600")
 
-root = Tk()
+    frame_top = Frame(root)
+    frame_top.pack(side=TOP)
+
+    frame_bottom1 = Frame(root, bg="white")
+    frame_bottom1.pack(side=BOTTOM)
+
+    laybel = Label(frame_top,text="Описание 1 события")
+    laybel.pack(side=LEFT)
+
+    laybel2 = Label(frame_top,text="Описание 2 события")
+    laybel2.pack(side=LEFT)
+    
+    def end1():
+        Room.map -= 1
+        Room.axe += 1
+        Room.food +=4
+    
+    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1.pack(side=LEFT)
+
+    btn1 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=btn1_click)
+    btn1.pack(side=LEFT)
+
+    root.mainloop()
+
+
 def btn_click():
     hp = Ted.hp
     inventory = Ted.inventory
@@ -73,10 +95,9 @@ def btn_click():
     info = f"{str(hp)} ted's hp, {str(inventory)} ted's inventory, {str(hunger)} ted's, {str(thrust)} ted's"
     messagebox.showerror(title="ted", message=info)
 def btn1_click():
-    if Ted.hp > 0:
-        Ted.hp -= 1
+    event1()
 
-
+root = Tk()
 root.title("Игра")
 root.geometry("300x250")
 
@@ -92,5 +113,7 @@ btn.pack()
 btn1 = Button(frame, text="-hp", bg="red", command=btn1_click)
 btn1.pack()
 
-
 root.mainloop()
+
+
+    
