@@ -13,7 +13,6 @@ class chel():
        self.hp = 3
        self.max_hp = 3 
 
-
 class room():
     def __init__(self):
         self.water = 0
