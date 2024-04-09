@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 import nachalo as nach
+import random
+
 
 class chel():
    def __init__(self,idpers):
@@ -17,6 +19,9 @@ class room():
         self.water = 0
         self.food = 0
         self.knife = 0
+        self.medkit = 0
+        self.cat = 0
+        self.map = 1
 
 Room = room()
 
@@ -27,6 +32,38 @@ Dolores = chel() # объект класса
 Timmi = chel()
 
 Mary = chel() # объект класса
+
+#def
+
+def explor():
+    i = random.randint(1,10)
+    if i == 1:
+        explor_result(8,0,0,0)
+    elif i == 2:
+        explor_result(0,8,0,0)
+    elif i == 3:
+        explor_result(4,0,1,0)
+    elif i == 4:
+        explor_result(0,4,0,0)
+    elif i == 5:
+        explor_result(8,8,0,0)
+    elif i == 6:
+        explor_result(4,4,0,0)
+    elif i == 7:
+        explor_result(0,0,0,0)
+    elif i == 8:
+        explor_result(2,2,0,1)
+    elif i == 9:
+        explor_result(0,0,1,0)
+    else:
+        explor_result(0,0,1,0)    
+
+def explor_result(food,water,medkit,cat):
+    Room.food += food
+    Room.water += water
+    Room.medkit += medkit
+    Room.cat += cat
+
 
 root = Tk()
 def btn_click():
