@@ -32,6 +32,7 @@ print(text1) # из констант
 def kitchen():
     answer = [int(input(i, ru.KITCHEN))]
     ps.remove(i)
+    i = random.choice(ps)
     if '4' in answer:
         Room.food += 1
     elif '5' in answer:
@@ -47,6 +48,7 @@ def kitchen():
 def liv_r():
     answer = [int(input(i, ru.LIV_R))]
     ps.remove(i)
+    i = random.choice(ps)
     if '1' in answer:
         Room.lock += 1
     elif '4' in answer:
@@ -62,6 +64,7 @@ def liv_r():
 def bath():
     answer = [int(input(i, ru.BATH))]
     ps.remove(i)
+    i = random.choice(ps)
     if '1' in answer:
         Room.medkit += 1
     elif '2' in answer:
@@ -77,6 +80,7 @@ def bath():
 def child():
     answer = [int(input(i, ru.CHILD))]
     ps.remove(i)
+    i = random.choice(ps)
     if '1' in answer:
         Room.lantern += 1
     elif '2' in answer:
