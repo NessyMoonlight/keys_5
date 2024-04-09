@@ -9,7 +9,7 @@ def event1():
     print(ru.EVENT_1_1)
     print(ru.EVENT_1_2)
     root = Tk()
-    root.title("Событие")
+    root.title(ru.EVENT_1)
     root.geometry("100x100")
 
     frame_top = Frame(root)
@@ -56,7 +56,7 @@ def event1():
     print(ru.EVENT_2_5)
     print(ru.EVENT_2_6)
     root = Tk()
-    root.title("Событие")
+    root.title(ru.EVENT_2)
     root.geometry("100x100")
 
     frame_top = Frame(root)
