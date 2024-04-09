@@ -56,35 +56,6 @@ def explor_result(food,water,medkit,cat):
     Room.medkit += medkit
     Room.cat += cat
 
-def event1():
-    root = Tk()
-    root.title("Событие")
-    root.geometry("600x600")
-
-    frame_top = Frame(root)
-    frame_top.pack(side=TOP)
-
-    frame_bottom1 = Frame(root, bg="white")
-    frame_bottom1.pack(side=BOTTOM)
-
-    laybel = Label(frame_top,text="Описание 1 события")
-    laybel.pack(side=LEFT)
-
-    laybel2 = Label(frame_top,text="Описание 2 события")
-    laybel2.pack(side=LEFT)
-    
-    def end1():
-        Room.map -= 1
-        Room.axe += 1
-        Room.food +=4
-    
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
-    btn1.pack(side=LEFT)
-
-    btn1 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=btn1_click)
-    btn1.pack(side=LEFT)
-
-    root.mainloop()
 
 
 def btn_click():
