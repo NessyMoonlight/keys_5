@@ -1,5 +1,4 @@
 import random
-import main as m
 import dop_local as ru
 
 class room():
@@ -26,11 +25,13 @@ p_2 = input(ru.BEGINNING)
 p_3 = input(ru.BEGINNING)
 p_4 = input(ru.BEGINNING)
 ps = [p_1, p_2, p_3, p_4]
+i = random.choice(ps)
 
 print(text1) # из констант
 
-def kitchen(food, water, medkit):
-    answer = [int(input(random.choice(ps), ru.KITCHEN))]
+def kitchen():
+    answer = [int(input(i, ru.KITCHEN))]
+    ps.remove(i)
     if '4' in answer:
         Room.food += 1
     elif '5' in answer:
@@ -44,7 +45,8 @@ def kitchen(food, water, medkit):
 
 
 def liv_r():
-    answer = [int(input(random.choice(ps), ru.LIV_R))]
+    answer = [int(input(i, ru.LIV_R))]
+    ps.remove(i)
     if '1' in answer:
         Room.lock += 1
     elif '4' in answer:
@@ -58,7 +60,8 @@ def liv_r():
 
 
 def bath():
-    answer = [int(input(random.choice(ps), ru.BATH))]
+    answer = [int(input(i, ru.BATH))]
+    ps.remove(i)
     if '1' in answer:
         Room.medkit += 1
     elif '2' in answer:
@@ -72,7 +75,8 @@ def bath():
 
 
 def child():
-    answer = [int(input(random.choice(ps), ru.CHILD))]
+    answer = [int(input(i, ru.CHILD))]
+    ps.remove(i)
     if '1' in answer:
         Room.lantern += 1
     elif '2' in answer:
