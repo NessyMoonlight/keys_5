@@ -4,12 +4,13 @@ from tkinter import messagebox
 import ru_local as ru
 
 
+
 def event1():
     print(ru.EVENT_1)
     print(ru.EVENT_1_1)
     print(ru.EVENT_1_2)
     root = Tk()
-    root.title("Событие")
+    root.title(ru.EVENT_1)
     root.geometry("100x100")
 
     frame_top = Frame(root)
@@ -19,45 +20,44 @@ def event1():
     frame_bottom1.pack(side=BOTTOM)
 
     def end1():
-        if main.Room.map >0:
-            main.Room.map -= 1       
-        main.Room.axe += 1
-        main.Room.food +=4
-        messagebox.showinfo(message="Исход1")
-        root.destroy()
-    
-    def end2():
-        if main.Room.map >0:
+        if main.Room.map > 0:
             main.Room.map -= 1
-        if main.Room.water>4:
-            main.Room.water -= 4
-        elif main.Room.water >0:
-            main.Room.water = 0
-        if main.Room.food >0:
-            main.Room.food -=4
-        messagebox.showinfo(message="Исход2")
+        main.Room.axe += 1
+        main.Room.food += 4
+        messagebox.showinfo(message=ru.EVENT_1_YES)
         root.destroy()
-    
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+
+    def end2():
+        if main.Room.map > 0:
+            main.Room.map -= 1
+        if main.Room.water > 4:
+            main.Room.water -= 4
+        elif main.Room.water > 0:
+            main.Room.water = 0
+        if main.Room.food > 0:
+            main.Room.food -= 4
+        messagebox.showinfo(message=ru.EVENT_1_NO)
+        root.destroy()
+
+    btn1 = Button(frame_bottom1, text=ru.EVENT_1_1, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.EVENT_1_2, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
     
 
-
-def event2():
-    print("Условия")
-    print("Выбор 1")
-    print("Выбор 2")
-    print("Выбор 3")
-    print("Выбор 4")
-    print("Выбор 5")
-    print("Выбор 6")
+def event1():
+    print(ru.EVENT_2)
+    print(ru.EVENT_2_1)
+    print(ru.EVENT_2_2)
+    print(ru.EVENT_2_3)
+    print(ru.EVENT_2_4)
+    print(ru.EVENT_2_5)
+    print(ru.EVENT_2_6)
     root = Tk()
-    root.title("Событие")
-    root.geometry("300x100")
+    root.title(ru.EVENT_2)
+    root.geometry("100x100")
 
     frame_top = Frame(root)
     frame_top.pack(side=TOP)
@@ -70,7 +70,7 @@ def event2():
             main.Room.soap -= 1
         messagebox.showinfo(message="Исход1")
         root.destroy()
-    
+
     def end2():
         if main.Room.dihlofos>0:
             main.Room.dihlofos -= 1
@@ -80,8 +80,7 @@ def event2():
             main.HP
         messagebox.showinfo(message="Исход2")
         root.destroy()
-    
-    
+
     def end4():
         if main.Room.water>0:
             main.Room.water -=1
@@ -95,7 +94,7 @@ def event2():
         main.Room.food +=4
         messagebox.showinfo(message="Исход4")
         root.destroy()
-    
+
     def end6():
         if main.Room.map>0:
             main.Room.map -= 1
@@ -110,20 +109,19 @@ def event2():
         messagebox.showinfo(message="Исход5")
         root.destroy()    
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.EVENT_2_1, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.EVENT_2_2, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
-
-    btn4 = Button(frame_bottom1, text="Выбор 3", bg="brown", command=end4)
+    btn4 = Button(frame_bottom1, text=ru.EVENT_2_4, bg="brown", command=end4)
     btn4.pack(side=LEFT)
 
-    btn5 = Button(frame_bottom1, text="Выбор 4", bg="brown", command=end5)
+    btn5 = Button(frame_bottom1, text=ru.EVENT_2_5, bg="brown", command=end5)
     btn5.pack(side=LEFT)
 
-    btn6 = Button(frame_bottom1, text="Выбор 5", bg="brown", command=end6)
+    btn6 = Button(frame_bottom1, text=ru.EVENT_2_6, bg="brown", command=end6)
     btn6.pack(side=LEFT)
 
 def event3():
