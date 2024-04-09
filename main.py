@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import nachalo as nach
+import ru_local as ru
 
 class chel():
    def __init__(self,idpers):
