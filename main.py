@@ -24,6 +24,9 @@ class room():
         self.cat = 0
         self.map = 1
         self.axe = 0
+        self.soap = 0
+        self.dihlofos = 0
+        self.lock = 0
 
 
 Room = room()
