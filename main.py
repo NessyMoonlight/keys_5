@@ -3,7 +3,7 @@ from tkinter import messagebox
 import nachalo as nach
 import random
 import ru_local as ru
-import explor as ex
+
 
 class chel():
     def __init__(self, idpers):
@@ -27,12 +27,22 @@ class room():
         self.soap = 0
         self.dihlofos = 0
         self.lock = 0
+        self.ammo = 0
+        self.radio = 0
+        self.rifel = 0
 
+Ted = chel(1)
+
+Dolores = chel(2)
+
+Timmi = chel(3)
+
+Mary = chel(4)
 
 Room = room()
 
 
-def explor():
+def exploror():
     i = random.randint(1, 10)
     if i == 1:
         explor_result(8, 0, 0, 0)
@@ -62,35 +72,123 @@ def explor_result(food, water, medkit, cat):
     Room.medkit += medkit
     Room.cat += cat
 
+def day_start():
+    root = Tk()
+    root.title("Раздача ресурсов")
+    root.geometry("300x250")
 
+    if Ted:
+        Ted.hunger -= 1
+        Ted.thrust -=1
+    if Dolores:
+        Dolores.hunger -=1
+        Dolores.thrust -=1
+    if Timmi:
+        Timmi.hunger -=1
+        Timmi.thrust -=1
+    if Mary:
+        Mary.hunger -=1
+        Mary.thrust -=1
 
-def btn_click():
-    hp = Ted.hp
-    inventory = Ted.inventory
-    hunger = Ted.hunger
-    thrust = Ted.thrust
-    info = f"{str(hp)} ted's hp, {str(inventory)} ted's inventory, {str(hunger)} ted's, {str(thrust)} ted's"
-    messagebox.showerror(title="ted", message=info)
+    def feed_ted():
+        if Room.food>0:
+            Ted.hunger += 1
+            Room.food -=1
+        else:
+            print("Еды нет")
+    def feed_dolores():
+        if Room.food>0:
+            Dolores.hunger += 1
+            Room.food -=1
+        else:
+            print("Еды нет")
+    def feed_timmi():
+        if Room.food>0:
+            Timmi.hunger += 1
+            Room.food -=1
+        else:
+            print("Еды нет")
+    def feed_mary():
+        if Room.food>0:
+            Mary.hunger += 1
+            Room.food -=1
+        else:
+            print("Еды нет")
 
+    def drink_ted():
+        if Room.water>0:
+            Ted.thrust += 1  
+            Room.water -= 1
+        else:
+            print("Воды нет") 
+    def drink_dolores():
+        if Room.water>0:
+            Dolores.thrust += 1 
+            Room.water -= 1
+        else:
+            print("Воды нет") 
+    def drink_timmi():
+        if Room.water>0:
+            Timmi.thrust += 1 
+            Room.water -= 1
+        else:
+            print("Воды нет") 
+    def drink_mary():
+        if Room.water>0:
+            Mary.thrust += 1   
+            Room.water -= 1
+        else:
+            print("Воды нет")                     
 
-def btn1_click():
-    ex.event1()
+    frame = Frame(root)
+    frame.place(relx=0, rely=0, relwidth=1, relheight=1)
 
+    if Ted:
+        btn = Button(frame, text="Кормить Теда", bg="red", command=feed_ted)
+        btn.pack()
+    if Ted:
+        btn1 = Button(frame, text="Поить Теда", bg="red", command=drink_ted)
+        btn1.pack()
 
-root = Tk()
-root.title("Игра")
-root.geometry("300x250")
+    if Dolores:
+        btn3 = Button(frame, text="Кормить Долорес", bg="red", command=feed_dolores)
+        btn3.pack()
+    if Dolores:
+        btn4 = Button(frame, text="Поить Долорес", bg="red", command=drink_dolores)
+        btn4.pack()
 
-# canvas = Canvas(root, width=300, height=250)
-# canvas.pack()
+    if Timmi:
+        btn5 = Button(frame, text="Кормить Тимми", bg="red", command=feed_timmi)
+        btn5.pack()
+    if Timmi:
+        btn6 = Button(frame, text="Поить Тимми", bg="red", command=drink_timmi)
+        btn6.pack()
 
-frame = Frame(root, bg="black")
-frame.place(relx=0, rely=0, relwidth=1, relheight=1)
+    if Mary:
+        btn7 = Button(frame, text="Кормить Мари", bg="red", command=feed_mary)
+        btn7.pack()
+    if Mary:
+        btn8 = Button(frame, text="Поить Мари", bg="red", command=drink_mary)
+        btn8.pack()
 
-btn = Button(frame, text="карточка Теда", bg="red", command=btn_click)
-btn.pack()
+    btn2 = Button(frame, text="Выход", bg="red", command=root.destroy)
+    btn2.pack(side=BOTTOM)
 
-btn1 = Button(frame, text="-hp", bg="red", command=btn1_click)
-btn1.pack()
+    root.mainloop()
 
-root.mainloop()
+def day1():
+    print("Текст день 1")
+    if Ted.hunger == 0 or Ted.thrust == 0 or Ted.hp == 0:
+        Ted.__del__()
+        print("Tед мертв")
+    if Dolores.hunger == 0 or Dolores.thrust == 0 or Dolores.hp == 0:
+        Dolores.__del__()
+        print("Доллорес мертва")
+    if Timmi.hunger == 0 or Timmi.thrust == 0 or Timmi.hp == 0:
+        Timmi.__del__()
+        print("Тимми мерт")
+    if Mary.hunger == 0 or Mary.thrust == 0 or Mary.hp == 0:
+        Mary.__del__()
+        print("Мари мертва") 
+    day_start()   
+
