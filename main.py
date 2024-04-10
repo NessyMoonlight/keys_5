@@ -124,28 +124,28 @@ def day_start():
 
     def drink_ted():
         if Room.water>0:
-            Ted.thrust += 1  
+            Ted.thrust += 1
             Room.water -= 1
         else:
-            print("Воды нет") 
+            print("Воды нет")
     def drink_dolores():
         if Room.water>0:
-            Dolores.thrust += 1 
+            Dolores.thrust += 1
             Room.water -= 1
         else:
-            print("Воды нет") 
+            print("Воды нет")
     def drink_timmi():
         if Room.water>0:
-            Timmi.thrust += 1 
+            Timmi.thrust += 1
             Room.water -= 1
         else:
-            print("Воды нет") 
+            print("Воды нет")
     def drink_mary():
         if Room.water>0:
-            Mary.thrust += 1   
+            Mary.thrust += 1
             Room.water -= 1
         else:
-            print("Воды нет")                     
+            print("Воды нет")
 
     frame = Frame(root)
     frame.place(relx=0, rely=0, relwidth=1, relheight=1)
@@ -182,6 +182,3 @@ def day_start():
     btn2.pack(side=BOTTOM)
 
     root.mainloop()
-
-
-

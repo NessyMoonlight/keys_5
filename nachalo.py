@@ -1,6 +1,7 @@
 import random
 import dop_local as ru
 
+
 class room():
     def __init__(self):
         self.water = 0
@@ -32,23 +33,22 @@ food = 0
 water = 0
 medkit = 0
 
-print("qsd") # из констант
-
+print("qsd")  # из констант
 
 answer = [input(f"{i} {ru.KITCHEN}")]
 ps.remove(i)
 if '4' in answer:
     Rooom.food += 2
-    food +=1
+    food += 1
 elif '5' in answer:
     Rooom.water += 2
-    water +=1
+    water += 1
 elif '8' in answer:
     Rooom.water += 2
-    water +=1
+    water += 1
 elif '9' in answer:
     Rooom.medkit += 1
-    medkit +=1
+    medkit += 1
 elif '1' in answer:
     Rooom.knife += 1
 i = random.choice(ps)
@@ -61,7 +61,7 @@ elif '4' in answer:
     Rooom.book += 1
 elif '5' in answer:
     Rooom.food += 2
-    food +=1
+    food += 1
 elif '6' in answer:
     Rooom.axe += 1
 elif '7' in answer:
@@ -69,22 +69,21 @@ elif '7' in answer:
 
 i = random.choice(ps)
 
-
 answer = [input(f"{i} {ru.KITCHEN}")]
 ps.remove(i)
 if '1' in answer:
     Rooom.medkit += 1
-    medkit +=1
+    medkit += 1
 elif '2' in answer:
     Rooom.soap += 1
 elif '4' in answer:
     Rooom.water += 2
-    water +=1
+    water += 1
 elif '5' in answer:
     Rooom.dihlofos += 1
 elif '6' in answer:
     Rooom.water += 2
-    water +=1
+    water += 1
 
 i = random.choice(ps)
 
@@ -94,17 +93,16 @@ if '1' in answer:
     Rooom.lantern += 1
 elif '2' in answer:
     Rooom.food += 2
-    food +=1
+    food += 1
 elif '8' in answer:
     Rooom.book += 1
 elif '9' in answer:
     Rooom.water += 2
-    water +=1
-      
+    water += 1
 
 if water == 0:
     Rooom.water += 8
 if food == 0:
-    Rooom.food +=8
-if medkit== 0:
-    Rooom.medkit +=1
+    Rooom.food += 8
+if medkit == 0:
+    Rooom.medkit += 1
