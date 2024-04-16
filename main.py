@@ -45,7 +45,7 @@ class room():
         self.rifel = rifel
 
 
-Ted = chel("Ted")
+Ted = chel("Ted") # instance of the class.(copy)
 
 Dolores = chel("Dolores")
 
@@ -66,16 +66,12 @@ def live():
     """
     if Ted.hunger == 0 or Ted.thirst == 0 or Ted.hp == 0:
         Ted.__del__()
-        print("Tед мертв")
     if Dolores.hunger == 0 or Dolores.thirst == 0 or Dolores.hp == 0:
         Dolores.__del__()
-        print("Доллорес мертва")
     if Timmi.hunger == 0 or Timmi.thirst == 0 or Timmi.hp == 0:
         Timmi.__del__()
-        print("Тимми мертв")
     if Mary.hunger == 0 or Mary.thirst == 0 or Mary.hp == 0:
         Mary.__del__()
-        print("Мари мертва")
     if (Ted.hunger == 0 or Ted.thirst == 0 or Ted.hp == 0) and (
             Dolores.hunger == 0 or Dolores.thirst == 0 or Dolores.hp == 0) and (
             Timmi.hunger == 0 or Timmi.thirst == 0 or Timmi.hp == 0) and (

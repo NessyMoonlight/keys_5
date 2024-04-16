@@ -49,10 +49,10 @@ def event1():
     root.title(ru.EVENT_1)
     root.geometry("500x500")
 
-    frame_top = Frame(root)
-    frame_top.pack(side=TOP)
+    frame_top = Frame(root) # create a space for button
+    frame_top.pack(side=TOP) # placement
 
-    frame_bottom1 = Frame(root, bg="white")
+    frame_bottom1 = Frame(root, bg="white") #
     frame_bottom1.pack(side=BOTTOM)
 
     def end1():
@@ -640,15 +640,18 @@ def event12():
         messagebox.showinfo(message=ru.EVENT_NO)
         root.destroy()
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.EVENT_9_1, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.EVENT_9_2, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
 
 def day1():
     print(ru.DAY_1)
+    print(ru.TEXT_1_1)
+    print(ru.TEXT_1_2)
+    print(ru.TEXT_1_3)
 
     # main.exploror()
 
@@ -665,12 +668,12 @@ def day1():
     frame_bottom1.pack(side=BOTTOM)
 
     def end1():
-        messagebox.showinfo(message="Исход1")
+        messagebox.showinfo(message=ru.FINAL_1_1)
         root.destroy()
         day2()
 
     def end2():
-        messagebox.showinfo(message="Исход2")
+        messagebox.showinfo(message=ru.FINAL_1_2_3)
         root.destroy()
         day2()
 
@@ -684,31 +687,31 @@ def day1():
             main.Dolores.hp -= 2
         elif i == 4:
             main.Mary.hp -= 2
-        messagebox.showinfo(message="Исход3")
+        messagebox.showinfo(message=ru.FINAL_1_2_3_YES)
         root.destroy()
         day2()
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.TEXT_1_1, bg="brown", command=end1)
     btn1.pack(side=main.LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.TEXT_1_2, bg="brown", command=end2)
     btn2.pack(side=main.LEFT)
 
-    btn3 = main.Button(frame_bottom1, text="Выбор 3", bg="brown", command=end3)
+    btn3 = main.Button(frame_bottom1, text=ru.TEXT_1_3, bg="brown", command=end3)
     btn3.pack(side=main.LEFT)
 
     main.live()
 
 
 def day2():
-    print("Текст день 2")
+    print(ru.DAY)
 
     main.live()
     event_random()
     # main.exploror()
 
     root = Tk()
-    root.title("Событие")
+    root.title(ru.TEXT_2)
     root.geometry("500x500")
 
     frame_top = Frame(root)
@@ -720,26 +723,26 @@ def day2():
     def end1():
         main.Room.food += 1
         main.Room.water += 1
-        messagebox.showinfo(message="Исход1")
+        messagebox.showinfo(message=ru.FINAL_2_1)
         root.destroy()
         # main.explor_result()
         day3()
 
     def end2():
-        messagebox.showinfo(message="Исход2")
+        messagebox.showinfo(message=ru.TEXT_21)
         root.destroy()
         # main.explor_result()
         day3()
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.TEXT_2_1, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.TEXT_2_2, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
 
 def day3():
-    print("Текст день 3")
+    print(ru.TEXT_3)
 
     main.live()
     event_random()
@@ -750,14 +753,14 @@ def day3():
 
 
 def day4():
-    print("Текст день 4")
+    print(ru.TEXT_4)
 
     main.live()
     event_random()
     # main.exploror()
 
     root = Tk()
-    root.title("Событие")
+    root.title(ru.TEXT_4)
     root.geometry("300x100")
 
     frame_top = Frame(root)
@@ -767,26 +770,26 @@ def day4():
     frame_bottom1.pack(side=BOTTOM)
 
     def end1():
-        messagebox.showinfo(message="Исход1")  # если радио есть
+        messagebox.showinfo(message=ru.FINAL_4_1)  # если радио есть
         root.destroy()
         # main.explor_result()
         day5()
 
     def end2():
-        messagebox.showinfo(message="Исход2")
+        messagebox.showinfo(message=ru.TEXT_41)
         root.destroy()
         # main.explor_result()
         day5()
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.TEXT_4_1, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.TEXT_4_2, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
 
 def day5():
-    print("Текст день 5")
+    print(ru.TEXT_5)
 
     main.live()
     event_random()
@@ -797,7 +800,7 @@ def day5():
 
 
 def day6():
-    print("Текст день 6")
+    print(ru.DAY)
 
     main.live()
     event_random()
@@ -808,7 +811,7 @@ def day6():
 
 
 def day7():
-    print("Текст день 7")
+    print(ru.DAY)
 
     main.live()
     event_random()
@@ -819,7 +822,7 @@ def day7():
 
 
 def day8():
-    print("Текст день 8")
+    print(ru.DAY)
 
     main.live()
     event_random()
@@ -830,14 +833,14 @@ def day8():
 
 
 def day9():
-    print("Текст день 9")
+    print(ru.TEXT_9)
 
     main.live()
     event_random()
     # main.exploror()
 
     root = Tk()
-    root.title("Событие")
+    root.title(ru.TEXT_9)
     root.geometry("500x500")
 
     frame_top = Frame(root)
@@ -847,33 +850,33 @@ def day9():
     frame_bottom1.pack(side=BOTTOM)
 
     def end1():
-        messagebox.showinfo(message="Исход1")
+        messagebox.showinfo(message=ru.TEXT_10_YES)
         root.destroy()
         # main.explor_result()
         day10()
 
     def end2():
-        messagebox.showinfo(message="Исход2")
+        messagebox.showinfo(message=ru.TEXT_10_NO)
         root.destroy()
         # main.explor_result()
         day10()
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.YES, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.NO, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
 
 def day10():
-    print("Текст день 10")
+    print(ru.TEXT_10)
 
     main.live()
     event_random()
     # main.explor_result()
 
     root = Tk()
-    root.title("Событие")
+    root.title(ru.TEXT_10)
     root.geometry("300x100")
 
     frame_top = Frame(root)
@@ -883,43 +886,16 @@ def day10():
     frame_bottom1.pack(side=BOTTOM)
 
     def end1():
-        messagebox.showinfo(message="Исход1")
+        messagebox.showinfo(message=ru.TEXT_10_YES)
         root.destroy()
 
     def end2():
-        messagebox.showinfo(message="Исход2")
+        messagebox.showinfo(message=ru.TEXT_10_NO)
         root.destroy()
 
-    btn1 = Button(frame_bottom1, text="Выбор 1", bg="brown", command=end1)
+    btn1 = Button(frame_bottom1, text=ru.YES, bg="brown", command=end1)
     btn1.pack(side=LEFT)
 
-    btn2 = Button(frame_bottom1, text="Выбор 2", bg="brown", command=end2)
+    btn2 = Button(frame_bottom1, text=ru.NO, bg="brown", command=end2)
     btn2.pack(side=LEFT)
 
-
-def btn_click():
-    hp = main.Ted.hp
-    inventory = main.Ted.inventory
-    hunger = main.Ted.hunger
-    thrust = main.Ted.thrust
-    info = f"{str(hp)} ted's hp, {str(inventory)} ted's inventory, {str(hunger)} ted's, {str(thrust)} ted's"
-    messagebox.showerror(title="ted", message=info)
-
-
-def btn1_click():
-    event2()
-
-
-"""root = Tk()
-root.title("Игра")
-root.geometry("300x250")
-
-
-frame = Frame(root)
-frame.place(relx=0, rely=0, relwidth=1, relheight=1)
-
-
-btn2 = Button(frame, text="Следующий день", bg="red", command=day1)
-btn2.pack(side=BOTTOM)
-
-root.mainloop()"""
