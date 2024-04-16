@@ -1,5 +1,10 @@
+# Case-study #5
+# Developers: Borodin Artemiy, Solovyova Maria,
+# Selikhova Polina, Lyamin Egor
+#
+
 import random
-import dop_local as ru
+import ru_local as ru
 
 
 class room():
@@ -33,7 +38,7 @@ food = 0
 water = 0
 medkit = 0
 
-print("qsd")  # из констант
+print(ru.TEXT_0)
 
 answer = [input(f"{i} {ru.KITCHEN}")]
 ps.remove(i)
@@ -53,7 +58,7 @@ elif '1' in answer:
     Rooom.knife += 1
 i = random.choice(ps)
 
-answer = [input(f"{i} {ru.KITCHEN}")]
+answer = [input(f"{i} {ru.LIV_R}")]
 ps.remove(i)
 if '1' in answer:
     Rooom.lock += 1
@@ -66,10 +71,9 @@ elif '6' in answer:
     Rooom.axe += 1
 elif '7' in answer:
     Rooom.rifle += 1
-
 i = random.choice(ps)
 
-answer = [input(f"{i} {ru.KITCHEN}")]
+answer = [input(f"{i} {ru.BATH}")]
 ps.remove(i)
 if '1' in answer:
     Rooom.medkit += 1
@@ -84,10 +88,9 @@ elif '5' in answer:
 elif '6' in answer:
     Rooom.water += 2
     water += 1
-
 i = random.choice(ps)
 
-answer = [input(f"{i} {ru.KITCHEN}")]
+answer = [input(f"{i} {ru.CHILD}")]
 ps.remove(i)
 if '1' in answer:
     Rooom.lantern += 1
@@ -100,6 +103,7 @@ elif '9' in answer:
     Rooom.water += 2
     water += 1
 
+# if the player has not chosen any of the necessary things.
 if water == 0:
     Rooom.water += 8
 if food == 0:

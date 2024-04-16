@@ -1,3 +1,8 @@
+# Case-study #5
+# Developers: Borodin Artemiy, Solovyova Maria,
+# Selikhova Polina, Lyamin Egor
+#
+
 from tkinter import *
 from tkinter import messagebox
 import nachalo as nach
@@ -6,8 +11,9 @@ import random
 import ru_local as ru
 
 
+# creating a character class.
 class chel():
-    def __init__(self, name):
+    def __init__(self, name): # self is a characteristic of a class.
         self.name = name
         self.inventory = 0
         self.thirst = 6
@@ -15,10 +21,13 @@ class chel():
         self.hp = 3
         self.max_hp = 3
 
+
+# to delete a character.
     def __del__(self):
         print(f"{self.name} Умер")
 
 
+# items from the inventory in the bunker.
 class room():
     def __init__(self, water, food, knife, medkit, cat, map, axe, soap, dihlofos, lock, ammo, radio, rifel):
         self.water = water
@@ -44,12 +53,17 @@ Timmi = chel("Timmi")
 
 Mary = chel("Mary")
 
+# we transfer the things that we received at the unitial stage.
 Room = room(nach.Rooom.water, nach.Rooom.food, nach.Rooom.knife, nach.Rooom.medkit, nach.Rooom.cat, nach.Rooom.map,
             nach.Rooom.axe, nach.Rooom.soap, nach.Rooom.dihlofos, nach.Rooom.lock, nach.Rooom.ammo, nach.Rooom.radio,
             nach.Rooom.rifle)
 
 
 def live():
+    """
+    a function that checks if a character is alive
+    and deletes it if dead
+    """
     if Ted.hunger == 0 or Ted.thirst == 0 or Ted.hp == 0:
         Ted.__del__()
         print("Tед мертв")
@@ -72,15 +86,18 @@ def live():
 
 
 def exploror():
+    """
+    the function of expeditions for a random character
+    """
     d = random.randint(1, 4)
     if d == 1:
-        print("Ntrcn r 'rcgblbwbb")
+        print(ru.TED_EX)
     elif d == 2:
-        print("Ntrcn r 'rcgblbwbb")
+        print(ru.DOLORES_EX)
     elif d == 3:
-        print("Ntrcn r 'rcgblbwbb")
+        print(ru.MARY_EX)
     elif d == 4:
-        print("Ntrcn r 'rcgblbwbb")
+        print(ru.TIMMY_EX)
     i = random.randint(1, 10)
     if i == 1:
         explor_result(8, 0, 0, 0)
@@ -104,7 +121,12 @@ def exploror():
         explor_result(0, 0, 1, 0)
 
 
+
 def explor_result(food, water, medkit, cat):
+    """
+    the result function of the expedition,
+    which replenishes the inventory of the bunker
+    """
     Room.food += food
     Room.water += water
     Room.medkit += medkit
@@ -112,6 +134,10 @@ def explor_result(food, water, medkit, cat):
 
 
 def day_start():
+    """
+    a function that analyzes the parameters of the character
+    and makes it possible to change them using available resources
+    """
     if (Ted.hp and Dolores.hp and Timmi.hp and Mary.hp) <= 0:
         exit()
     else:
@@ -240,15 +266,6 @@ def Main():
     nach
 
     ex.day1()
-
-    """root = Tk()
-    root.title("Раздача ресурсов")
-    root.geometry("1000x1000")
-
-    frame = Frame(root)
-    frame.place(relx=0, rely=0, relwidth=1, relheight=1)
-
-    root.mainloop()"""
 
 
 if __name__ == '__main__':

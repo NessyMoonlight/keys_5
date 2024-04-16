@@ -1,3 +1,8 @@
+# Case-study #5
+# Developers: Borodin Artemiy, Solovyova Maria,
+# Selikhova Polina, Lyamin Egor
+#
+
 import main as main
 from tkinter import *
 from tkinter import messagebox
@@ -6,6 +11,9 @@ import random
 
 
 def event_random():
+    """
+    random events function
+    """
     i = random.randint(1, 12)
     if i == 1:
         event1()
@@ -640,14 +648,14 @@ def event12():
 
 
 def day1():
-    print("Текст день 1")
+    print(ru.DAY_1)
 
     # main.exploror()
 
     event_random()
 
     root = Tk()
-    root.title("Событие")
+    root.title(ru.TEXT_1)
     root.geometry("500x500")
 
     frame_top = Frame(root)
